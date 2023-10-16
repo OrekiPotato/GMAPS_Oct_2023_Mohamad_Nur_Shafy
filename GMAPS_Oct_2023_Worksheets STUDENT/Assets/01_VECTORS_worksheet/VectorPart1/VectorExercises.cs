@@ -63,8 +63,8 @@ public class VectorExercises : MonoBehaviour
     {
         for (int i = 0; i < n; i++)
         {
-            startPt = new Vector2(Random.Range(-maxX, maxX), Random.Range(-5, 5));
-            endPt = new Vector2(Random.Range(-5, 5), Random.Range(-maxY, maxY));
+            startPt = new Vector2(Random.Range(-maxX, maxX), Random.Range(-maxY, maxY));
+            endPt = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
 
             drawnLine = lineFactory.GetLine(startPt, endPt, 0.02f, Color.black);
             drawnLine.EnableDrawing(true);
@@ -90,14 +90,15 @@ public class VectorExercises : MonoBehaviour
                 Random.Range(-maxX, maxX), 
                 Random.Range(-maxY, maxY));
 
-            // Your code here
-            // ...
+            endPt = new Vector2(
+                Random.Range(-5, 5),
+                Random.Range(-5, 5));
 
-            //DebugExtension.DebugArrow(
-            //    new Vector3(0, 0, 0),
-            //    // Your code here,
-            //    Color.white,
-            //    60f);
+            DebugExtension.DebugArrow(
+                new Vector3(0, 0, 0),
+                new Vector3(5, 5, Random.Range(-minY, minY)),
+                Color.white,
+                60f);
         }  
     }
 
