@@ -63,10 +63,14 @@ public class VectorExercises : MonoBehaviour
 
     void Question2b(int n)
     {
+        maxX = 5;
+        maxY = 5;
+
         for (int i = 0; i < n; i++)
         {
-            startPt = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
-            endPt = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
+
+            startPt = new Vector2(Random.Range(-maxX, maxX), Random.Range(-maxY, maxY));
+            endPt = new Vector2(Random.Range(-maxX, maxX), Random.Range(-maxY, maxY));
 
             drawnLine = lineFactory.GetLine(startPt, endPt, 0.02f, Color.black);
             drawnLine.EnableDrawing(true);
@@ -88,17 +92,15 @@ public class VectorExercises : MonoBehaviour
     {
         for (int i = 0; i < n; i++)
         {
-            startPt = new Vector2(
-                Random.Range(-5, 5),
-                Random.Range(-5, 5));
+            startPt = new Vector2(0,0);
 
             endPt = new Vector2(
-                Random.Range(-5, 5),
-                Random.Range(-5, 5));
+                Random.Range(-5, -5),
+                Random.Range(-5, -5));
 
             DebugExtension.DebugArrow(
                 new Vector3(0, 0, 0),
-                new Vector3(5, 5, Random.Range(-5, 5)),
+                new Vector3(5, 5, Random.Range(-maxY, maxY)),
                 Color.white,
                 60f);
         }  
