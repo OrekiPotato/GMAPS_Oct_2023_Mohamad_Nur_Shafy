@@ -16,6 +16,8 @@ public class VectorExercises : MonoBehaviour
 
     private void Start()
     {
+        CalculateGameDimensions();
+
         if (Q2a)
             Question2a();
         if (Q2b)
@@ -63,7 +65,7 @@ public class VectorExercises : MonoBehaviour
     {
         for (int i = 0; i < n; i++)
         {
-            startPt = new Vector2(Random.Range(-maxX, maxX), Random.Range(-maxY, maxY));
+            startPt = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
             endPt = new Vector2(Random.Range(-5, 5), Random.Range(-5, 5));
 
             drawnLine = lineFactory.GetLine(startPt, endPt, 0.02f, Color.black);
@@ -87,8 +89,8 @@ public class VectorExercises : MonoBehaviour
         for (int i = 0; i < n; i++)
         {
             startPt = new Vector2(
-                Random.Range(-maxX, maxX), 
-                Random.Range(-maxY, maxY));
+                Random.Range(-5, 5),
+                Random.Range(-5, 5));
 
             endPt = new Vector2(
                 Random.Range(-5, 5),
@@ -96,7 +98,7 @@ public class VectorExercises : MonoBehaviour
 
             DebugExtension.DebugArrow(
                 new Vector3(0, 0, 0),
-                new Vector3(5, 5, Random.Range(-minY, minY)),
+                new Vector3(5, 5, Random.Range(-5, 5)),
                 Color.white,
                 60f);
         }  
