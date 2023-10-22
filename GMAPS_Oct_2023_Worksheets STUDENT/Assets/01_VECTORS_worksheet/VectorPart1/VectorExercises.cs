@@ -19,10 +19,12 @@ public class VectorExercises : MonoBehaviour
         if (Q2a)
             Question2a();
         if (Q2b)
+            CalculateGameDimensions();
             Question2b(20);
         if (Q2d)
             Question2d();
         if (Q2e)
+            CalculateGameDimensions();
             Question2e(20);
         if (Q3a)
             Question3a();
@@ -36,7 +38,13 @@ public class VectorExercises : MonoBehaviour
 
     public void CalculateGameDimensions()
     {
+        GameHeight = Camera.main.orthographicSize * 2f;
+        GameWidth = Camera.main.aspect * GameHeight;
 
+        maxX = GameWidth / 2;
+        maxY = GameHeight / 2;
+        minX = -maxX;
+        minY = -maxY;
     }
 
     void Question2a()
@@ -54,17 +62,21 @@ public class VectorExercises : MonoBehaviour
 
     void Question2b(int n)
     {
-        minX = -5;
-        maxX = 5;
-        minY = -5;
-        maxY = 5;
+        //maxX = 5;
+        //minX = -5;
+        minX = -maxX;
+
+        //maxY = 5;
+        //minY = -5;
+        minY = -maxY;
+
 
         for (int i = 0; i < n; i++)
         {
             startPt = new Vector2(Random.Range(-maxX, maxX), Random.Range(-maxY, maxY));
             endPt = new Vector2(Random.Range(-maxX, maxX), Random.Range(-maxY, maxY));
 
-            drawnLine = lineFactory.GetLine(startPt, endPt, 0.02f.Color.black);
+            drawnLine = lineFactory.GetLine(startPt, endPt, 0.02f, Color.black);
             drawnLine.EnableDrawing(true);
         }
 
@@ -72,18 +84,22 @@ public class VectorExercises : MonoBehaviour
 
     void Question2d()
     {
-
+        DebugExtension.DebugArrow(
+            new Vector3(0, 0, 0),
+            new Vector3(5, 5, 0),
+            Color.red,
+            60f);
     }
 
     void Question2e(int n)
     {
         for (int i = 0; i < n; i++)
         {
-            //DebugExtension.DebugArrow(
-            //    new Vector3(0, 0, 0),
-            //    // Your code here,
-            //    Color.white,
-            //    60f);
+            DebugExtension.DebugArrow(
+                new Vector3(0, 0, 0),
+                new Vector3(Random.Range(-maxX, maxX), Random.Range(-maxY, maxY), Random.Range(-maxY, maxY)),
+                Color.white,
+                60f);
         }  
     }
 
