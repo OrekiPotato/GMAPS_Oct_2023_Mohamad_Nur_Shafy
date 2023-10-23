@@ -62,15 +62,16 @@ public class HVector2D
         y /= mag;
      }
 
-    // public float DotProduct(/*???*/)
-    // {
+     public float DotProduct(HVector2D vec)
+     {
+        return (x * vec.x + y * vec.y);
+     }
 
-    // }
-
-    // public HVector2D Projection(/*???*/)
-    // {
-
-    // }
+     public HVector2D Projection(HVector2D vec)
+     {
+        float dotProduct = this.DotProduct(vec);
+        return vec * (dotProduct / (vec.Magnitude() * vec.Magnitude()));
+     }
 
     // public float FindAngle(/*???*/)
     // {
