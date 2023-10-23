@@ -23,7 +23,7 @@ public class Mario : MonoBehaviour
         moveDir = new Vector3(gravityDir.y, -gravityDir.x, 0);
         moveDir = moveDir.normalized * -1f;
 
-        rb.AddForce(moveDir * 5f);
+        rb.AddForce(moveDir * force);
 
         gravityNorm = gravityDir.normalized;
         rb.AddForce(gravityNorm * gravityStrength);
@@ -32,7 +32,7 @@ public class Mario : MonoBehaviour
 
         rb.MoveRotation(Quaternion.Euler(0, 0, angle));
 
-        DebugExtension.DebugArrow(transform.position,gravityNorm * gravityStrength,Color.red);
+        DebugExtension.DebugArrow(transform.position, gravityNorm * gravityStrength,Color.red);
 
         DebugExtension.DebugArrow(transform.position, moveDir, Color.blue);
 
