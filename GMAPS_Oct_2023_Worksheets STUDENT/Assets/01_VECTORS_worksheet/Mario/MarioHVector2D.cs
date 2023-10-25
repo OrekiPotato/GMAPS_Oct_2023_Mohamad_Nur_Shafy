@@ -14,7 +14,7 @@ public class MarioHVector2D : MonoBehaviour
 
     void Start()
     {
-
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void FixedUpdate()
