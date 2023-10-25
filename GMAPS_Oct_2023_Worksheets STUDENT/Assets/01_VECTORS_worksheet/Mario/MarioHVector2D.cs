@@ -21,8 +21,17 @@ public class MarioHVector2D : MonoBehaviour
     {
         gravityDir = new HVector2D(planet.position - transform.position);  
         moveDir = new HVector2D(gravityDir.y, -gravityDir.x);
+        moveDir.Normalize();
 
-        // Your code here
-        // ...
+        rb.AddForce(moveDir.ToUnityVector2() * force);
+
+        gravityDir.Normalize();
+        gravityNorm = gravityDir * gravityStrength;
+        rb.AddForce(gravityNorm.ToUnityVector2());
+
+        HVector2D right = new HVector2D(-1,0);
+        float angle = moveDir.FindAngle(right);
+
+        rb.MoveRotation(angle);
     }
 }
