@@ -73,10 +73,10 @@ public class HVector2D
         return vec * (dotProduct / (vec.Magnitude() * vec.Magnitude()));
      }
 
-    // public float FindAngle(/*???*/)
-    // {
-
-    // }
+     public float FindAngle(HVector2D vec)
+     {
+        return (float)Mathf.Acos(DotProduct(vec) / (Magnitude() * vec.Magnitude()));
+     }
 
     public Vector2 ToUnityVector2()
     {
