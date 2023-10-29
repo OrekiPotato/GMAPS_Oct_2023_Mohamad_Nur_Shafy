@@ -29,9 +29,10 @@ public class MarioHVector2D : MonoBehaviour
         gravityNorm = gravityDir * gravityStrength;
         rb.AddForce(gravityNorm.ToUnityVector2());
 
-        HVector2D right = new HVector2D(-1,0);
-        float angle = moveDir.FindAngle(right);
+        Vector3 moveDirVec3 = moveDir.ToUnityVector3();
 
-        rb.MoveRotation(angle);
+        float angle = Vector3.SignedAngle(Vector3.right, moveDirVec3, Vector3.forward);
+
+        rb.MoveRotation(Quaternion.Euler(0,0,angle));
     }
 }

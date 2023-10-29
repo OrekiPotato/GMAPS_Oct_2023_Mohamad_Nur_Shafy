@@ -17,10 +17,10 @@ public class Player : MonoBehaviour
     //    // Your code here
     //}
 
-    //float Dot(Vector3 vectorA, Vector3 vectorB)
-    //{
-    //    // Your code here
-    //}
+    float Dot(Vector3 vectorA, Vector3 vectorB)
+    {
+        return (vectorA.x * vectorB.x + vectorA.y * vectorB.y);
+    }
 
     //float AngleToPlayer()
     //{
@@ -70,8 +70,18 @@ public class Player : MonoBehaviour
     {
         if (IsCaptain)
         {
-            //float angle = // Your code here
-            //Debug.Log(angle);
+;
+            Vector3 startPosition = transform.position;
+            Vector3 directionVector = Vector3.zero;
+
+            directionVector = OtherPlayer.transform.position - startPosition;
+
+            DebugExtension.DebugArrow(startPosition, directionVector, Color.black);
+
+            DebugExtension.DebugArrow(startPosition, transform.forward, Color.blue);
+
+            float angle = Vector3.Angle(transform.position, directionVector);
+            Debug.Log(angle);
         }
     }
 }
