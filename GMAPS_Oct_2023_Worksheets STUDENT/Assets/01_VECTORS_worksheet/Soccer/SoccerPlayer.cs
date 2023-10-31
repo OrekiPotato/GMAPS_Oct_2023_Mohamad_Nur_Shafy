@@ -11,10 +11,24 @@ public class SoccerPlayer : MonoBehaviour
 
     float angle = 0f;
 
-    //private void Start()
-    //{
-       
-    //}
+    private void Start()
+    {
+        //OtherPlayers = FindObjectsOfType<SoccerPlayer>();
+        //SoccerPlayer[] temp = new SoccerPlayer[OtherPlayers.Length - 1];
+        //int i = 0;
+        //foreach (SoccerPlayer p in OtherPlayers)
+        //{
+        //    if (p != this)
+        //    {
+        //        temp[i] = p;
+        //        i++;
+        //    }    
+        //}
+        //OtherPlayers = temp;
+        //Debug.Log("Number of items in OtherPlayers = " + OtherPlayers.Length);
+
+        OtherPlayers = FindObjectsOfType<SoccerPlayer>().Where(t => t != this).ToArray();
+    }
 
     //float Magnitude(Vector3 vector)
     //{
@@ -38,14 +52,15 @@ public class SoccerPlayer : MonoBehaviour
     //    return closest;
     //}
 
-    //void DrawVectors()
-    //{
-    //    foreach (SoccerPlayer other in OtherPlayers)
-    //    {
-    //        // Your code here
-    //        // ...
-    //    }
-    //}
+    void DrawVectors()
+    {
+        foreach (SoccerPlayer other in OtherPlayers)
+        {
+            Vector3 direction = other.transform.position - transform.position;
+
+            Debug.DrawRay(transform.position, direction, Color.black);
+        }
+    }
 
     void Update()
     {
@@ -56,7 +71,8 @@ public class SoccerPlayer : MonoBehaviour
             angle += Input.GetAxis("Horizontal") * rotationSpeed;
             transform.localRotation = Quaternion.AngleAxis(angle, Vector3.up);
             Debug.DrawRay(transform.position, transform.forward * 10f, Color.red);
-        }
+        }   
+        DrawVectors();
     }
 }
 
