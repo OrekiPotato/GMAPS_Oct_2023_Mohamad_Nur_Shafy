@@ -112,8 +112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21c2071ec552684583fa46615560dc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalMesh: {fileID: 0}
-  clonedMesh: {fileID: 0}
 --- !u!114 &3800616816674248098
 MonoBehaviour:
   m_ObjectHideFlags: 0

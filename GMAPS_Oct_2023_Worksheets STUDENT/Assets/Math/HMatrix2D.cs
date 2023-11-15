@@ -157,18 +157,26 @@ public class HMatrix2D
 
     public void setIdentity()
     {
+        //for (int y = 0; y < 3; y++) // Row
+        //{
+        //    for (int x = 0; x < 3; x++) // Column
+        //    {
+        //        if (x == y)
+        //        {
+        //            entries[y,x] = 1;
+        //        }
+        //        else 
+        //        {
+        //            entries[y,x] = 0;
+        //        }
+        //    }
+        //}
+
         for (int y = 0; y < 3; y++) // Row
         {
             for (int x = 0; x < 3; x++) // Column
             {
-                if (x == y)
-                {
-                    entries[y,x] = 1;
-                }
-                else 
-                {
-                    entries[y,x] = 0;
-                }
+                entries[y,x] = x == y ? 1 : 0;
             }
         }
     }
