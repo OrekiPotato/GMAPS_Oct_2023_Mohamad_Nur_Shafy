@@ -19,15 +19,15 @@ public class TransformMesh : MonoBehaviour
         meshManager = GetComponent<MeshManager>();
         pos = new HVector2D(gameObject.transform.position.x, gameObject.transform.position.y);
 
-        Translate(2, 2);
-        //Rotate(45);
+        //Translate(1, 1);
+        Rotate(45);
     }
 
 
     void Translate(float x, float y)
     {
         transformMatrix.setIdentity();
-        transformMatrix.setTranslationMat(y, x);
+        transformMatrix.setTranslationMat(x, y);
         Transform();
 
         pos = transformMatrix * pos;
@@ -45,6 +45,7 @@ public class TransformMesh : MonoBehaviour
 
         transformMatrix.setIdentity();
         transformMatrix = fromOriginMatrix * rotateMatrix * toOriginMatrix;
+        rotateMatrix.Print();
 
         Transform();
     }
@@ -55,10 +56,11 @@ public class TransformMesh : MonoBehaviour
 
         for (int i = 0; i < vertices.Length; i++)
         {
-            HVector2D vert = new HVector2D(vertices[i].y, vertices[i].x);
+            HVector2D vert = new HVector2D(vertices[i].x, vertices[i].y);
             vert = transformMatrix * vert;
             vertices[i].x = vert.x;
             vertices[i].y = vert.y;
+            Debug.Log($"Vertice x {vert.x},{vert.y}");
 
         }
 

@@ -91,8 +91,8 @@ public class HMatrix2D
     {
         return new HVector2D
         (
-            left.entries[0, 0] * right.x + left.entries[1, 0] * right.y + left.entries[2, 0],
-            left.entries[0, 1] * right.x + left.entries[1, 1] * right.y + left.entries[2, 1]
+            left.entries[0, 0] * right.x + left.entries[0, 1] * right.y + left.entries[0, 2] * right.h,
+            left.entries[0, 1] * right.x + left.entries[1, 1] * right.y + left.entries[1, 2] * right.h
         );
     }
 
