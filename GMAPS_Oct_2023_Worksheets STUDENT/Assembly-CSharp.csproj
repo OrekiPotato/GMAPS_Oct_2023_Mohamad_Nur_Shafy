@@ -83,6 +83,15 @@
     <Compile Include="Assets\02_MATRICES_worksheet\Sonic\TestMatrix.cs" />
     <Compile Include="Assets\Resources_3rd Party\DebugDrawingExtension\DebugExtension.cs" />
     <Compile Include="Assets\Resources_3rd Party\LineDraw\_Demo\LineDemo.cs" />
+    <Compile Include="Assets\04_SIMPLE_COLLISIONS_worksheet\Pong\Pong No Unity Physics\Scripts\Paddle_NP.cs" />
+    <Compile Include="Assets\04_SIMPLE_COLLISIONS_worksheet\SimpleCollision\Scripts\Wall2D.cs" />
+    <Compile Include="Assets\04_SIMPLE_COLLISIONS_worksheet\SimpleCollision\Scripts\Cue2D.cs" />
+    <Compile Include="Assets\04_SIMPLE_COLLISIONS_worksheet\Pong\Pong Unity Physics\Scripts\Ball.cs" />
+    <Compile Include="Assets\04_SIMPLE_COLLISIONS_worksheet\SimpleCollision\Scripts\Ball2D.cs" />
+    <Compile Include="Assets\04_SIMPLE_COLLISIONS_worksheet\Pong\Pong No Unity Physics\Scripts\PongBall.cs" />
+    <Compile Include="Assets\04_SIMPLE_COLLISIONS_worksheet\Pong\Pong No Unity Physics\Scripts\AIPaddle_NP.cs" />
+    <Compile Include="Assets\04_SIMPLE_COLLISIONS_worksheet\SimpleCollision\Scripts\Table2D.cs" />
+    <Compile Include="Assets\04_SIMPLE_COLLISIONS_worksheet\Pong\Pong Unity Physics\Scripts\Paddle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources_3rd Party\Ruler\readme.txt" />
