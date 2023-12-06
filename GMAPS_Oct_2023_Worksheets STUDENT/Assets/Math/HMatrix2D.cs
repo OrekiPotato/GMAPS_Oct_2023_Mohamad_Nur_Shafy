@@ -101,14 +101,17 @@ public class HMatrix2D
     {
         return new HMatrix2D
         (
+            // top row of matrix
             left.entries[0, 0] * right.entries[0, 0] + left.entries[0, 1] * right.entries[1, 0] + left.entries[0, 2] * right.entries[2, 0],
             left.entries[0, 0] * right.entries[0, 1] + left.entries[0, 1] * right.entries[1, 1] + left.entries[0, 2] * right.entries[2, 1],
             left.entries[0, 0] * right.entries[0, 2] + left.entries[0, 1] * right.entries[1, 2] + left.entries[0, 2] * right.entries[2, 2],
 
+            // mid row of matrix
             left.entries[1, 0] * right.entries[0, 0] + left.entries[1, 1] * right.entries[1, 2] + left.entries[1, 2] * right.entries[2, 2],
             left.entries[1, 0] * right.entries[0, 2] + left.entries[1, 1] * right.entries[1, 2] + left.entries[1, 2] * right.entries[2, 2],
             left.entries[1, 0] * right.entries[0, 2] + left.entries[1, 1] * right.entries[1, 2] + left.entries[1, 2] * right.entries[2, 2],
 
+            // bottom row of matrix
             left.entries[2, 0] * right.entries[0, 0] + left.entries[2, 1] * right.entries[1, 2] + left.entries[2, 2] * right.entries[2, 2],
             left.entries[2, 0] * right.entries[0, 2] + left.entries[2, 1] * right.entries[1, 2] + left.entries[2, 2] * right.entries[2, 2],
             left.entries[2, 0] * right.entries[0, 2] + left.entries[2, 1] * right.entries[1, 2] + left.entries[2, 2] * right.entries[2, 2]
@@ -121,7 +124,7 @@ public class HMatrix2D
         {
             for (int x = 0; x < 3; x++) // Column
             {
-                if (left.entries[y,x] != right.entries[y,x]) 
+                if (left.entries[y,x] != right.entries[y,x])  // Check if entries on both sides are equal.
                 { 
                     return false; 
                 }
@@ -140,10 +143,10 @@ public class HMatrix2D
     //    // your code here
     //}
 
-    public override int GetHashCode()
-    {
-        return base.GetHashCode();
-    }
+    //public override int GetHashCode()
+    //{
+    //    return base.GetHashCode();
+    //}
 
     //public HMatrix2D transpose()
     //{
@@ -192,9 +195,10 @@ public class HMatrix2D
     {
         setIdentity();
         float rad = rotDeg * Mathf.Deg2Rad;
+
         entries[0, 0] = Mathf.Cos(rad);
-        entries[0, 1] = -Mathf.Sin(rad);
-        entries[1, 0] = Mathf.Sin(rad);
+        entries[0, 1] = Mathf.Sin(rad);
+        entries[1, 0] = -Mathf.Sin(rad);
         entries[1, 1] = Mathf.Cos(rad);
     }
 

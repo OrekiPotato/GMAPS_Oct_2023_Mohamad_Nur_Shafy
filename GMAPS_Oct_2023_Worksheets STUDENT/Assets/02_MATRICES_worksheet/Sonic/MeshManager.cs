@@ -40,5 +40,7 @@ public class MeshManager : MonoBehaviour
         vertices = clonedMesh.vertices;
         triangles = clonedMesh.triangles;
     }
+
+    
 }
 
