@@ -86,15 +86,15 @@ namespace pool
                 speedX = -speedX;
             }
 
-            if (transform.position.y < leftWall.transform.position.y || transform.position.y > rightWall.transform.position.y)
+            if (transform.position.y < bottomWall.transform.position.y || transform.position.y > topWall.transform.position.y)
             {
                 if (speedY > 0f)
                 {
-                    ypos = rightWall.transform.position.y - wallOffset - radius;
+                    ypos = topWall.transform.position.y - wallOffset - radius;
                 }
                 else
                 {
-                    ypos = rightWall.transform.position.y + wallOffset + radius;
+                    ypos = bottomWall.transform.position.y + wallOffset + radius;
                 }
                 transform.position = new Vector3(transform.position.x,
                                                  ypos,
