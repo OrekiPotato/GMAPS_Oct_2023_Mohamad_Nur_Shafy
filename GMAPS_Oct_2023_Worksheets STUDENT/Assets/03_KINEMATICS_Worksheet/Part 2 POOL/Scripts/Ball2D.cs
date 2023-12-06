@@ -16,12 +16,14 @@ public class Ball2D : MonoBehaviour
         Position.x = transform.position.x;
         Position.y = transform.position.y;
 
+        // Calculates the sprite radius based on its size.
         Sprite sprite = GetComponent<SpriteRenderer>().sprite;
         Vector2 sprite_size = sprite.rect.size;
         Vector2 local_sprite_size = sprite_size / sprite.pixelsPerUnit;
         Radius = local_sprite_size.x / 2f;
     }
 
+    // This checks for ball collisions between a point 
     public bool IsCollidingWith(float x, float y)
     {
         HVector2D otherPoint = new HVector2D(x, y);
@@ -29,6 +31,7 @@ public class Ball2D : MonoBehaviour
         return distance <= Radius;
     }
 
+    // This checks for ball collisions between another balls
     public bool IsCollidingWith(Ball2D other)
     {
         float distance = Util.FindDistance(Position, other.Position);
@@ -48,6 +51,7 @@ public class Ball2D : MonoBehaviour
         Position.x += displacementX;
         Position.y += displacementY;
 
+        // Updates the position of the ball with the new calculated position.
         transform.position = new Vector2(Position.x,Position.y);
     }
 }

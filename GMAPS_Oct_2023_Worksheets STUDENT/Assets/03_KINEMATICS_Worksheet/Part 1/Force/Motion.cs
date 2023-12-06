@@ -10,6 +10,7 @@
      {
          float dt = Time.deltaTime;
 
+        // Calculates the displacements of the axis based on time and velocity.
          float dx = Velocity.x * dt;
          float dy = Velocity.y * dt;
          float dz = Velocity.z * dt;
