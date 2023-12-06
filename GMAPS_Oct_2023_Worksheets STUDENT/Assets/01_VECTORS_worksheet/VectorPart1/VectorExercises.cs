@@ -38,6 +38,7 @@ public class VectorExercises : MonoBehaviour
 
     public void CalculateGameDimensions()
     {
+        // Sets the overall dimension of the screen.
         GameHeight = Camera.main.orthographicSize * 2f;
         GameWidth = Camera.main.aspect * GameHeight;
 

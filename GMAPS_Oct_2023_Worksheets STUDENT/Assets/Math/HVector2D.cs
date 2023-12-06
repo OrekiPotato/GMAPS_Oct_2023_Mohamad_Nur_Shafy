@@ -9,6 +9,7 @@ public class HVector2D
     public float x, y;
     public float h;
 
+    // Constructors for different types of parameters.
     public HVector2D(float _x, float _y)
     {
         x = _x;
@@ -30,6 +31,7 @@ public class HVector2D
         h = 1.0f;
     }
 
+    // Overloaded operators for different math operations (+,-,*,/)
      public static HVector2D operator +(HVector2D a, HVector2D b)
      {
         return new HVector2D(a.x + b.x, a.y + b.y);
@@ -80,12 +82,12 @@ public class HVector2D
 
     public Vector2 ToUnityVector2()
     {
-        return new Vector2(x,y); // change this
+        return new Vector2(x,y); // Converts HVector2D values to Unity Vector2D values.
     }
 
     public Vector3 ToUnityVector3()
     {
-        return new Vector3(x,y,0f); // change this
+        return new Vector3(x,y,0f); // Converts HVector2D values to Unity Vectore3D values.
     }
 
     // public void Print()
