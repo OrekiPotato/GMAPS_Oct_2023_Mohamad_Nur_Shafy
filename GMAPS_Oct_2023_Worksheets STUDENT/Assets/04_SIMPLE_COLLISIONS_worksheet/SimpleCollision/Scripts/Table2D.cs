@@ -39,7 +39,7 @@ namespace Collision
             {
                 if (whiteBall.IsCollidingWith(wall))
                 {
-                    Vector2 ballVelocity = whiteBall.Velocity.ToUnityVector2(); // Converts HVector2D to Unity Vector2 
+                    Vector2 ballVelocity = whiteBall.Velocity; // Converts HVector2D to Unity Vector2 
 
                     Vector2 perp = wall.normalVec; // Finding perpendicular vector to wall, perp
                     Vector2 n = perp.normalized; // normalised vector

@@ -39,18 +39,6 @@ public class Ball2D : MonoBehaviour
         return distance <= Radius + other.Radius;
     }
 
-    public bool IsCollidingWith(Wall2D other)
-    {
-        Vector2 lineToPointVec = transform.position - other.bottom.position;
-
-        float proj = Vector2.Dot(lineToPointVec, other.wallVec.normalized);
-
-        float distanceFromLine = Vector2.Distance(lineToPointVec, proj * other.wallVec.normalized);
-
-        return distanceFromLine <= Radius * 1.25f;
-    }
-
-
     public void FixedUpdate()
     {
         UpdateBall2DPhysics(Time.deltaTime);
